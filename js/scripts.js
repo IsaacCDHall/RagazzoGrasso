@@ -25,11 +25,8 @@ $(document).ready(function(){
       $("#hiddenCosts").show()
     };
 
-    $('#makePizza').append(myPizza.toppings + " pizza coming up!");
+    $('#makePizza').append(myPizza.toppings.join(' and ') + " pizza coming up!");
     $('#pizzaCost').append("You're lucky it only costs $" + cost);
     $('#Selections').hide();
-    console.log("woah")
-
-
   });
 });

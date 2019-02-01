@@ -1,6 +1,9 @@
 #makePizza{
   display: none;
 }
+#pizzaCost{
+  display: none;
+}
 
 #hiddenCosts{
   display:none;
