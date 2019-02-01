@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <title>Pizza Ragazzo</title>
   </head>
   <body>
-
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Pizza Ragazzo</h1>
+        <h5>order a pizza, yo</h5>
+      </div>
+      <form id="Selections">
+        <div class="form-group">
+          <p>I would like my pizza to have the following toppings </p>
+          <input type="checkbox" name="toppings" value="spinach">&ensp; Spinach<br>
+          <input type="checkbox" name="toppings" value="tuna">&ensp;Canned Tuna<br>
+          <input type="checkbox" name="toppings" value="pineapple">&ensp;Pineapple slices<br>
+          <input type="checkbox" name="toppings" value="cheese">&ensp;Cheese<br>
+          <input type="checkbox" name="toppings" value="bus">&ensp;"Is this meat?" meatballs<br>
+          <input type="checkbox" name="toppings" value="train">&ensp;Cheese that we double checked for mold this time<br>
+          <input type="checkbox" name="toppings" value="streetcar">&ensp;Tap Water<br>
+          <input type="checkbox" name="toppings" value="taxi">&ensp;Uncle Jerry's Famous Secret Sauce&trade;<br>
+          <br>
+          <br>
+          <p>What size of pizza would you like?</p>
+          <select class="form-control" id="first">
+            <option>just toppings</option>
+            <option>small</option>
+            <option>medium</option>
+            <option>ragazzo grasso</option>
+          </select>
+        </div>
+       <button type="submit">Make me a pizza</button>
+      </form>
+      <span id="makePizza">
+        <p><b>Pizza cost: </b></p>
+      </span>
+    </div>
   </body>
 </html>
