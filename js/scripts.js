@@ -10,7 +10,9 @@ Pizza.prototype.findCost = function (){
 }
 
 $(document).ready(function(){
-  $("form").submit(function(event){
+  $('#Selections2').hide();
+  $('#Selections3').hide();
+  $("form#Selections1").submit(function(event){
     event.preventDefault();
     $("#makePizza").show();
     $("#pizzaCost").show();
@@ -27,6 +29,43 @@ $(document).ready(function(){
 
     $('#makePizza').append(myPizza.toppings.join(' and ') + " pizza coming up!");
     $('#pizzaCost').append("You're lucky it only costs $" + cost);
-    $('#Selections').hide();
+    $('#Selections1').hide();
+    $('#Selections2').show();
+  });
+
+
+
+  $("form#Selections2").submit(function(event){
+    event.preventDefault();
+    $('#results').hide();
+    $("#makePizza").hide();
+    $('#Selections2').hide();
+    $('#Selections3').show();
+
+  });
+
+
+
+
+
+  $("form#Selections3").submit(function(event){
+    event.preventDefault();
+    $("#makePizza").hide();
+    $("#pizzaCost").hide();
+    $("#Selections3").hide();
+    $('#results').show();
+    var mySecondPizza = new Pizza();
+    mySecondPizza.size = $("#size").val()
+    $("input:checkbox[name=toppings]:checked").each(function(){
+      mySecondPizza.toppings.push($(this).val());
+    });
+    var cost = mySecondPizza.findCost();
+    if (cost === 0){
+      $("#pizzaCost").hide()
+      $("#hiddenCosts").show()
+    };
+    $('#makePizza').append(mySecondPizza.toppings.join(' and ') + " pizza coming up!");
+    $('#pizzaCost').append("You're lucky it only costs $" + cost);
+    $('#Selections1').hide();
   });
 });
