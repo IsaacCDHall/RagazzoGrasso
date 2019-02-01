@@ -27,17 +27,25 @@
           <br>
           <br>
           <p>What size of pizza would you like?</p>
-          <select class="form-control" id="first">
+          <select class="form-control" id="size">
             <option value ="0">just toppings</option>
             <option value ="1">small</option>
             <option value ="2">medium</option>
-            <option value ="3" selected>ragazzo grasso</option>
+            <option value ="10" selected>ragazzo grasso</option>
           </select>
         </div>
        <button type="submit">Make me a pizza</button>
       </form>
       <span id="makePizza">
+        <p><b><i>mmm pizza</i></b></p>
+      </span>
+      <br><br>
+      <span id="pizzaCost">
         <p><b>Pizza cost: </b></p>
+      </span>
+      <br><br>
+      <span id="hiddenCosts">
+        <p>Pizzas with no toppings cost 1000$ after tax, we've charged it to your dad's account</p>
       </span>
     </div>
   </body>

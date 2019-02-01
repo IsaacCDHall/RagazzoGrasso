@@ -1,3 +1,9 @@
 #makePizza{
   display: none;
 }
+
+#hiddenCosts{
+  display:none;
+  font-size: 25px;
+  color: rgba(255, 100, 100, 0.5);
+}
