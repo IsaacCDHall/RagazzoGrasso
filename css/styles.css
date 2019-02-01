@@ -1,12 +1,19 @@
 #makePizza{
   display: none;
+  font-style: italic;
 }
 #pizzaCost{
   display: none;
+  font-weight: bold;
 }
 
 #hiddenCosts{
   display:none;
   font-size: 25px;
   color: rgba(255, 100, 100, 0.5);
+}
+#morePizza{
+  display:none;
+  font-weight: bold;
+  font-family: cursive;
 }

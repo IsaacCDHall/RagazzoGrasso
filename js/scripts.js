@@ -25,15 +25,15 @@ $(document).ready(function(){
     });
     myPizza.findCost();
     if (myPizza.cost === 0){
-       return myPizza.cost = 1000
+       myPizza.cost = 1000;
        console.log(myPizza.cost)
       $("#pizzaCost").hide()
       $("#hiddenCosts").show()
     };
 
     console.log(myPizza)
-    $('#makePizza').append(myPizza.toppings.join(' and ') + " pizza coming up!");
-    $('#pizzaCost').append("You're lucky it only costs $" + myPizza.cost);
+    $('#makePizza').append("1 " + myPizza.toppings.join(' and ') + " pizza coming up!");
+    $('#pizzaCost').append("You're lucky, it only costs $" + myPizza.cost);
     $('#Selections1').hide();
     $('#Selections2').show();
   });
@@ -43,9 +43,10 @@ $(document).ready(function(){
   $("form#Selections2").submit(function(event){
     event.preventDefault();
     $('#results').hide();
-    $("#makePizza").hide();
+
     $('#Selections2').hide();
     $('#Selections3').show();
+    $("#morePizza").show();
 
   });
 
@@ -61,20 +62,20 @@ $(document).ready(function(){
     // $("#pizzaCost").hide();
     $("#Selections3").hide();
     $('#results').show();
-    mySecondPizza.size = $("#size").val()
-    $("input:checkbox[name=toppings]:checked").each(function(){
+    mySecondPizza.size = $("#size2").val()
+    $("input:checkbox[name=toppings2]:checked").each(function(){
       mySecondPizza.toppings.push($(this).val());
     });
      mySecondPizza.findCost();
-     console.log(mySecondPizza);
+     console.log(mySecondPizza.cost);
     if (mySecondPizza.cost === 0){
-      mySecondPizza.cost += 1000
-      $("#pizzaCost").hide()
+      mySecondPizza.cost = 1000;
+      // $("#pizzaCost").hide()
       $("#hiddenCosts").show()
       console.log("no toppings")
     };
-    $('#makePizza').append(mySecondPizza.toppings.join(' and ') + " pizza coming up!");
-    $('#pizzaCost').append("Altogether, you're lookin' at" + myPizza.cost + mySecondPizza.cost);
+    $('#makePizza').append("<br>" + "And another 1! This time with "+ mySecondPizza.toppings.join(' and '));
+    $('#pizzaCost').append(" for the first pizza and " + mySecondPizza.cost + "$ for the second."+"<br>" + '<br>' + "Altogether, you're lookin' at $" + (myPizza.cost + mySecondPizza.cost));
     $('#Selections1').hide();
   });
 });
