@@ -1,15 +1,16 @@
 function Pizza(){
   this.toppings=[];
   this.size=0;
-  this.toppingsCost=0
 }
 
 
 
 
+Pizza.prototype.findCost = function (){
 
+  return this.toppings.length * 2;
 
-
+}
 
 
 
@@ -17,13 +18,13 @@ $(document).ready(function(){
   $("form").submit(function(event){
     event.preventDefault();
     $("#makePizza").show();
-    var x = [];
+    var myPizza = new Pizza();
     $("input:checkbox[name=toppings]:checked").each(function(){
-
-      x.push($(this).val());
+      myPizza.toppings.push($(this).val());
     });
-    $('#makePizza').text(x + " pizza coming up!");
+    console.log(myPizza.findCost());
+    $('#makePizza').text(myPizza.toppings + " pizza coming up!");
     $('#Selections').hide();
-    console.log("help")
+    console.log("woah")
   });
 });
