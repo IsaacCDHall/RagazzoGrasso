@@ -9,7 +9,7 @@ Pizza.prototype.findCost = function (){
   this.cost *= (parseInt(this.size) + 1);
   return this.cost
 }
-
+//user interface 
 $(document).ready(function(){
   var myPizza = new Pizza();
 
@@ -37,29 +37,16 @@ $(document).ready(function(){
     $('#Selections1').hide();
     $('#Selections2').show();
   });
-
-
-
   $("form#Selections2").submit(function(event){
     event.preventDefault();
     $('#results').hide();
-
     $('#Selections2').hide();
     $('#Selections3').show();
     $("#morePizza").show();
-
   });
-
-
-
-
-
-
   $("form#Selections3").submit(function(event){
     var mySecondPizza = new Pizza();
     event.preventDefault();
-    // $("#makePizza").hide();
-    // $("#pizzaCost").hide();
     $("#Selections3").hide();
     $('#results').show();
     mySecondPizza.size = $("#size2").val()
@@ -70,7 +57,6 @@ $(document).ready(function(){
      console.log(mySecondPizza.cost);
     if (mySecondPizza.cost === 0){
       mySecondPizza.cost = 1000;
-      // $("#pizzaCost").hide()
       $("#hiddenCosts").show()
       console.log("no toppings")
     };
